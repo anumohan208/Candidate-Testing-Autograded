@@ -4,7 +4,7 @@ const input = require('readline-sync');
 
 // TODO 1.1a: Define candidateName // 
 let candidateName="" ;
-const numberOfQuestions=5;
+
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question ="Who was the first American woman in space? ";
 let correctAnswer="Sally Ride";
@@ -42,13 +42,26 @@ console.log("Correct Answer!\n")
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+  /*
+  if(candidateAnswer.toLowerCase()==correctAnswer.toLocaleLowerCase())
+  {
+    console.log(candidateName+"Your Answer is Correct");
+  } 
+  else{
+    console.log(candidateName+"Your Answer is Wrong");
+  }*/
 let mark=0;
 for(var i=0;i<5;i++){
  
 if(candidateAnswers[i].toLowerCase()==correctAnswers[i].toLowerCase()){
 
- // console.log("Congratulations",candidateName,"Answer",i+1,"is Correct!");
+ console.log("Your Answer for the question",'"',questions[i],'" :',candidateAnswers[i]);
+ console.log("Correct Answer:",correctAnswers[i]);
   mark++;
+}
+else{
+ console.log("Your Answer for the question",'"',questions[i],'" :',candidateAnswers[i]);
+ console.log("Correct Answer:",correctAnswers[i]);
 }
 
 
@@ -64,7 +77,7 @@ function runProgram() {
   askQuestion();
 
  let totalGrade=gradeQuiz(this.candidateAnswers);
- console.log("Total Grade",totalGrade+"%","\n");
+ console.log("\nTotal Grade",totalGrade+"%","\n");
   if(totalGrade>=80)
   {
     console.log("Status: PASS");
