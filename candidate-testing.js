@@ -51,12 +51,12 @@ function gradeQuiz(candidateAnswers) {
 
     if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
 
-      console.log("Your Answer for the question", '"', questions[i], '" :', candidateAnswers[i]);
+      console.log("Your Answer for the question",i+1, '"', questions[i], '" :', candidateAnswers[i]);
       console.log("Correct Answer:", correctAnswers[i]);
       mark++;
     }
     else {
-      console.log("\nYour Answer for the question", '"', questions[i], '" :', candidateAnswers[i]);
+      console.log("\nYour Answer for the question",i+1, '"', questions[i], '" :', candidateAnswers[i]);
       console.log("Correct Answer:", correctAnswers[i]);
     }
 
